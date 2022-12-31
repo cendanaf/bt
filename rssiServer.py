@@ -3,7 +3,7 @@ import collections
 import numpy as np
 import matplotlib.pyplot as plt
 
-#host = 'B8:27:EB:A5:E7:E9'
+
 host = 'E8:B1:FC:F5:16:02'
 #host = socket.gethostname()
 port = 4
@@ -57,7 +57,7 @@ while True:
     if res == 'quit':
         break
     elif res[0] == 'u':
-        val = int(res[1:])
+        val = float(res[1:])
         y.append(val)
         plotAxis1 = livePlot(x, y, plotAxis1)
         #print(val)

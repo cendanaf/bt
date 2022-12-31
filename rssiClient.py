@@ -8,6 +8,9 @@ btAddr = '34:43:0b:0b:bd:9b'
 
 bufferSize = 1024
 
+#cmd = 'hcitool rssi ' + btAddr
+cmd = 'sudo iw wlan0 scan | grep "SSID: Nucleus" -B2'
+
 server = socket.socket(socket.AF_BLUETOOTH, socket.SOCK_STREAM, socket.BTPROTO_RFCOMM)
 server.connect((addr, port))
 
@@ -22,7 +25,7 @@ while True:
         break
     elif cmd == 'u':
         res = 'u'
-        res += os.popen('hcitool rssi ' + btAddr).read()[-3:-1]
+        res += os.popen(cmd).read()[-3:-1]
         server.send(bytes(res, 'utf-8'))
     else:
         server.send(bytes(res,'utf-8'))
