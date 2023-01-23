@@ -10,7 +10,7 @@ bufferSize = 1024
 
 #cmd = 'hcitool rssi ' + btAddr # Use for bluetooth
 #command = 'sudo iw wlan0 scan | grep "SSID: Nucleus" -B2' # Used to search wifi networks
-command = 'iw wlan0 station dump | grep "signal" # Use for a connected wifi network
+command = 'iw wlan0 station dump | grep "signal" '# Use for a connected wifi network
 
 
 server = socket.socket(socket.AF_BLUETOOTH, socket.SOCK_STREAM, socket.BTPROTO_RFCOMM)
